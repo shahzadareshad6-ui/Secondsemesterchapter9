@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+
+public class Course {
+    private String courseName;
+    private ArrayList<String> students;
+
+    public Course(String courseName) {
+        this.courseName = courseName;
+        students = new ArrayList<>();
+    }
+
+    public void addStudent(String student) {
+        students.add(student);
+    }
+
+    public String[] getStudents() {
+        return students.toArray(new String[0]);
+    }
+
+    public int getNumberOfStudents() {
+        return students.size();
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void dropStudent(String student) {
+        students.remove(student);
+    }
+}
+
+
+
+
+
+
+public class TestCourse {
+    public static void main(String[] args) {
+        Course course = new Course("Java Programming");
+
+        course.addStudent("Ali");
+        course.addStudent("Ahmad");
+        course.addStudent("Karim");
+
+        System.out.println("Course: " + course.getCourseName());
+        System.out.println("Number of Students: " + course.getNumberOfStudents());
+
+        String[] students = course.getStudents();
+
+        for (String s : students) {
+            System.out.println(s);
+        }
+
+        course.dropStudent("Ahmad");
+
+        System.out.println("\nAfter removing Ahmad:");
+        for (String s : course.getStudents()) {
+            System.out.println(s);
+        }
+    }
+}

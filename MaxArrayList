@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MaxArrayList {
+
+    public static Integer max(ArrayList<Integer> list) {
+
+        if (list == null || list.size() == 0)
+            return null;
+
+        int max = list.get(0);
+
+        for (Integer n : list) {
+            if (n > max)
+                max = n;
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        ArrayList<Integer> list = new ArrayList<>();
+
+        System.out.println("Enter numbers (0 to stop):");
+
+        int n;
+
+        while ((n = input.nextInt()) != 0) {
+            list.add(n);
+        }
+
+        System.out.println("Largest Number = " + max(list));
+    }
+}

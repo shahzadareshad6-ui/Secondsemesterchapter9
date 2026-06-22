@@ -1,0 +1,29 @@
+import java.util.GregorianCalendar;
+
+public class TestGregorianCalendar {
+
+    public static void main(String[] args) {
+
+        // Task 1: Current date
+        GregorianCalendar calendar = new GregorianCalendar();
+
+        System.out.println("Current Date:");
+        System.out.println("Year: " +
+                calendar.get(GregorianCalendar.YEAR));
+        System.out.println("Month: " +
+                (calendar.get(GregorianCalendar.MONTH) + 1));
+        System.out.println("Day: " +
+                calendar.get(GregorianCalendar.DAY_OF_MONTH));
+
+        // Task 2: Set elapsed time
+        calendar.setTimeInMillis(1234567898765L);
+
+        System.out.println("\nDate for 1234567898765L milliseconds:");
+        System.out.println("Year: " +
+                calendar.get(GregorianCalendar.YEAR));
+        System.out.println("Month: " +
+                (calendar.get(GregorianCalendar.MONTH) + 1));
+        System.out.println("Day: " +
+                calendar.get(GregorianCalendar.DAY_OF_MONTH));
+    }
+}
